@@ -27,7 +27,7 @@ namespace UserManagement.Controllers
             { return BadRequest(new { message = ex.Message });
             } 
         }
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<ActionResult<ResponseDTO>> Register(UserRegisterRequestDTO registerRequest)
         {
             var user = await _userService.Register(registerRequest);
@@ -47,5 +47,8 @@ namespace UserManagement.Controllers
             }
             return Ok(user);
         }
+        [HttpPost("PatientProfile")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<>>
     }
 }

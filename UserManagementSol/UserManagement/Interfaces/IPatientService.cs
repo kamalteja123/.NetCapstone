@@ -1,6 +1,9 @@
-﻿namespace UserManagement.Interfaces
+﻿using UserManagement.Models.DTO;
+
+namespace UserManagement.Interfaces
 {
-    public class IPatientService
+    public interface IPatientService
     {
+        public Task<PatientProfileDTO> UpdatePatient(PatientProfileDTO patientProfileDTO);
     }
 }
